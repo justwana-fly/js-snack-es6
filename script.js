@@ -148,3 +148,24 @@ console.log(`La bici piu leggera è ${biciConMenoPeso.nome} con un peso di ${bic
 // Stampare in pagina oltre che in console!
 // Buon pomeriggio e buon divertimento !!!!
 
+
+function generaNumeroCasuale(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+const squadreDiCalcio = [
+    { nome: 'Squadra1', puntiFatti: 0, falliSubiti: 0 },
+    { nome: 'Squadra2', puntiFatti: 0, falliSubiti: 0 },
+    { nome: 'Squadra3', puntiFatti: 0, falliSubiti: 0 },
+    
+];
+
+for (let squadra of squadreDiCalcio) {
+    squadra.puntiFatti = generaNumeroCasuale(0, 100);
+    squadra.falliSubiti = generaNumeroCasuale(0, 50);
+}
+
+const squadreConPuntiEFalli = squadreDiCalcio.map(({ nome, puntiFatti, falliSubiti }) => ({ nome, puntiFatti, falliSubiti }));
+
+console.log("Squadre con nomi, punti fatti e falli subiti:");
+console.log(squadreConPuntiEFalli);
